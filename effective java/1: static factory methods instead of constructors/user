@@ -1,0 +1,35 @@
+// user.java
+
+public class User {
+
+    private String name;
+    private String email;
+    private String country;
+
+    public User(String name, String email, String country) {
+
+        this.name = name;
+        this.email = email;
+        this.country = country;
+
+        System.out.println("user(String name, String email, String country): " + country);
+
+    }
+
+    public User(String name, String email) {
+
+        this.name = name;
+        this.email = email;
+        this.country = "de";
+
+        System.out.println("user(String name, String email): " + country);
+
+    }
+
+    public static User createWithDefaultCountry(String name, String email) {
+
+        return new User(name, email, "us");
+
+    }
+
+}
