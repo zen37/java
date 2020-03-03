@@ -1,0 +1,9 @@
+class main {
+
+    public static void main(String[] args) {
+        user u1 = new user("john", "@", "uk");
+        user u2 = new user("john", "@");
+        user u3 = user.createWithDefaultCountry("ann", "@wer");
+    }
+
+}
