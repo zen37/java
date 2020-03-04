@@ -1,9 +1,11 @@
-class main {
+class Main {
 
     public static void main(String[] args) {
-        user u1 = new user("john", "@", "uk");
-        user u2 = new user("john", "@");
-        user u3 = user.createWithDefaultCountry("ann", "@wer");
+
+        // User u1 = User.createWithDefaultCountry("ann", "@wer");
+        // User u2 = User.create("john", "@trrr", "jp");
+        User u3 = User.createWithLogging("john", "@now", "ca");
+
     }
 
 }
