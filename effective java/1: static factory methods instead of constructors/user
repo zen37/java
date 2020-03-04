@@ -1,34 +1,52 @@
-// user.java
+
+import java.time.LocalDateTime;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class User {
 
+    private static final Logger logger = Logger.getLogger(User.class.getName());
     private String name;
     private String email;
     private String country;
 
-    public User(String name, String email, String country) {
+    private User(String name, String email, String country) {
 
         this.name = name;
         this.email = email;
         this.country = country;
 
-        System.out.println("user(String name, String email, String country): " + country);
+        System.out.println("User: " + this.name + " " + this.email + " " + this.country);
 
     }
 
-    public User(String name, String email) {
+    public static User createWithLogging(String name, String email, String country) {
 
-        this.name = name;
-        this.email = email;
-        this.country = "de";
+        setLoggerProperties();
+        logger.log(Level.INFO, "User instance created at: {0}", LocalDateTime.now());
+        return new User(name, email, country);
 
-        System.out.println("user(String name, String email): " + country);
+    }
 
+    private static void setLoggerProperties() {
+
+        ConsoleHandler handler = new ConsoleHandler();
+        handler.setLevel(Level.INFO);
+        handler.setFormatter(new SimpleFormatter());
+        // logger.addHandler(handler);
     }
 
     public static User createWithDefaultCountry(String name, String email) {
 
         return new User(name, email, "us");
+
+    }
+
+    public static User create(String name, String email, String country) {
+
+        return new User(name, email, country);
 
     }
 
