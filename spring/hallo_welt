@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-// tells Spring that this code describes an endpoint that should be made
-// available over the web
+// tells Spring that this code describes an endpoint that should be made available over the web
 public class DemoApplication {
 
 	public static void main(String[] args) {
