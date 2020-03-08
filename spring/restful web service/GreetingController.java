@@ -1,5 +1,3 @@
-// https://spring.io/guides/gs/rest-service/
-
 package com.example.restservice;
 
 import java.util.concurrent.atomic.AtomicLong;
